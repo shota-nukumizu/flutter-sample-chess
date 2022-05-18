@@ -120,6 +120,20 @@ class _HomePageState extends State<HomePage> {
 
 完成画面は以下の通り。
 
+![](image/chess-demo.png)
+
+実際に動かすこともできる。動かすときは盤面の下に棋譜が表示される。
+
+![](image/chess-demo2.png)
+
+あと、盤面の色を替えることもできる。**やりかたは簡単で、`boardColor`のプロパティを変更するだけ。**
+
+```dart
+boardColor: BoardColor.green
+```
+
+![](image/chess-demo3.png)
+
 # 開発環境
 
 * Windows 11
