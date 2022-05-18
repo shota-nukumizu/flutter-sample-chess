@@ -1,16 +1,10 @@
-# chessapp
+# Flutter Chess Application
 
-A new Flutter project.
+Flutterで開発されたチェスアプリ。作り方は非常に簡単で、Flutter入門には非常におすすめである。20~30分で簡単に作れるのでオススメ。(**というかコピペで動く**)
 
-## Getting Started
+# 開発環境
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Windows 11
+* Visual Studio Code 1.67
+* flutter_chess_board 1.0.1 - dart package
+* dart 2.17.0
