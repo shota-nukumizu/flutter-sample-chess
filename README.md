@@ -134,6 +134,85 @@ boardColor: BoardColor.green
 
 ![](image/chess-demo3.png)
 
+# 完成形
+
+`lib/main.dart`
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_chess_board/flutter_chess_board.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  ChessBoardController controller = ChessBoardController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chess Demo'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(
+              child: ChessBoard(
+                controller: controller,
+                boardColor: BoardColor.green,
+                boardOrientation: PlayerColor.white,
+              ),
+            ),
+          ),
+          Expanded(
+            child: ValueListenableBuilder<Chess>(
+              valueListenable: controller,
+              builder: (context, game, _) {
+                return Text(
+                  controller.getSan().fold(
+                        '',
+                        (previousValue, element) =>
+                            '${previousValue} \n' + (element ?? ''),
+                      ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+# 感想
+
+**パッケージ１つだけで簡単にアプリを開発できる**というFlutterの魅力を思い知った。これを拡張して対戦型のチェスアプリを開発してみたい。
+
 # 開発環境
 
 * Windows 11
